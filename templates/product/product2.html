@@ -1,0 +1,17 @@
+<div class="card text-center shadow border-0 mb-3">
+    {% if item.cover_image %}
+    <img src="{{ item.cover_image.url }}" alt="Card image" class="w-100">
+    {% endif %}
+    <div class="card-body">
+      <h6>
+        {{ item.title }}
+      </h6>
+      <p>
+        {{ item.price }} TL
+      </p>
+      <a class="btn btn-outline-warning btn-block " href="{% url 'users' user_pk=item.pk %}" role="button">
+        Sepete Ekle
+      </a>
+    </div> 
+</div>
+  

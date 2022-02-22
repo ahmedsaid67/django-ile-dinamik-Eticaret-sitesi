@@ -1,0 +1,62 @@
+{% extends 'base/components/base.html' %}
+
+{% block content %}
+
+<style>
+  .s-bg{
+  background-color: rgb(17, 16, 16);}
+</style>
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+      <div class="main">
+        <section class="module">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6 py-5 mt-5">
+                <table class="table table-striped table-border checkout-table">
+                  <tbody>
+                    <tr>
+                      <th class="hidden-xs">Item</th>
+                      <th>Ürün Adı</th>
+                      <th class="hidden-xs">Fiyat</th>
+                    </tr>
+                    {% for item in items %}
+                      <tr>
+                        <td class="w-25">
+                          <img src="{{item.cover_image.url}}" class="img-fluid img-thumbnail">
+                        </td>
+                        <td>
+                          <h5 class="product-title font-alt">{{item.product}}</h5>
+                        </td>
+                        <td class="hidden-xs">
+                          <h5 class="product-title font-alt">{{item.price}}</h5>
+                        </td>
+                    {% endfor%}
+                      </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="col-sm-6 mt-5 py-5 col-sm-offset-7">
+                <div class="shop-Cart-totalbox">
+                  <h4 class="font-alt py-2">Cart Totals</h4>
+                  <table class="table table-striped table-border checkout-table">
+                    <tbody>
+                      <tr>
+                        <th>Toplam Fiyat :</th>
+                      </tr>
+                      {% for cart in carts %}
+                        <tr>
+                          <td>{{cart.total_price}}</td>
+                        </tr>
+                      {% endfor%}
+                    </tbody>
+                  </table>
+                  <a class="btn btn-warning " href="#" role="button">Ödeme Al</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+{% endblock%}

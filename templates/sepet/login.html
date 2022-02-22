@@ -1,0 +1,37 @@
+{% extends 'base/components/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Easiest Way to Add Input Masks to Your Forms</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <style>
+        .s-bg{
+        background-color: rgb(17, 16, 16);}
+     </style>
+    <div class="s-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col mt-5 py-5 text-warning">
+                    <h4>Merhaba {{ user.username }},</h4>
+                    <p>{{ user.email }}</p>
+                    <a class="text-warning" href="{% url 'logout1' %}">Oturumu Kapat</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+</body>
+{% endblock content %}

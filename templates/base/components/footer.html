@@ -1,0 +1,103 @@
+<style>
+    .a-bg{
+    background-color: rgba(61, 59, 59, 0.83);}
+ </style>
+
+<div class="a-bg py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <h3 class="text-light">Urun Ozellikleri</h3>
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="">T-Shirt</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="">Bere</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="">Canta</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4">
+                
+                <form class="form-inline">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="ebulten" class="sr-only">E-Bulten</label>
+                        <input type="email" class="form-control" id="ebulten" placeholder="mail adresin">
+                    </div>
+                    <button type="submit" class="btn btn-dark mb-2">Kaydol</button>
+                    </form>
+
+            </div>
+        </div>
+
+        <div class="row border-top mb-3"></div>
+        <div class="row">
+            <div class="col-sm">
+                <h5 class="text-light">Erkek</h5>
+                <ul class="list-unstyled">
+                    {% for item in category1%}
+                        {% if item.gender == "man" or item.gender == "unisex" %}
+                        <li>
+                            <a class="list-item" href="{% url 'category_show' category_slug=item.slug %}">{{ item.title }}</a>
+                        </li>
+                        {% endif %}
+                    {% endfor%}
+                </ul>
+            </div>
+            <div class="col-sm">
+                <h5 class="text-light">Kadin</h5>
+                <ul class="list-unstyled">
+                    {% for item in category1%}
+                        {% if item.gender == "women" or item.gender == "unisex" %}
+                        <li>
+                            <a class="list-item" href="{% url 'category_show' category_slug=item.slug %}">{{ item.title }}</a>
+                        </li>
+                        {% endif %}
+                    {% endfor%}
+                </ul>
+            </div>
+            <div class="col-sm">
+                <h5 class="text-light">Her Zaman</h5>
+                <ul class="list-unstyled">
+                    {% for item in category1%}
+                        {% if item.gender == "unisex" %}
+                        <li>
+                            <a class="list-item" href="{% url 'category_show' category_slug=item.slug %}">{{ item.title }}</a>
+                        </li>
+                        {% endif %}
+                    {% endfor%}
+                </ul>
+            </div>
+            <div class="col-sm">
+                <h5 class="text-light">Bilgi</h5>
+                <ul class="list-unstyled">
+                    {% for item in pages %}
+                    <li>
+                        <a href="{% url 'page_show' page_slug=item.slug %}">
+                            {{ item.title }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-sm">
+                <h5 class="text-light">Sosyal Medya</h5>
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="#" class="icon-thumbnail fab fa-facebook-f"></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="icon-thumbnail fab fa-twitter"></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="icon-thumbnail fab fa-instagram"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
